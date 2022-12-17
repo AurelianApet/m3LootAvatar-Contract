@@ -11,6 +11,7 @@ contract WebaverseCharacter is ERC721A, Ownable{
     uint public maxTokenPurchase = 20;
     uint public maxTokenPerWallet = 44;
     uint256 public MAX_TOKENS = 10000;
+    bool public saleIsActive = true;
     address private _treasuryAddress; 
     
     mapping(uint256 => string) private _tokenURIs;
@@ -27,8 +28,13 @@ contract WebaverseCharacter is ERC721A, Ownable{
         require(os);
     }
 
+    function flipSaleState() public onlyOwner {
+        saleIsActive = !saleIsActive;
+    }
+
     function mintToken(uint numberOfTokens, string memory _tokenURI) public payable {
         uint256 currentTokenId = totalSupply();
+        require(saleIsActive, "Sale must be active to mint Tokens");
         require(numberOfTokens <= maxTokenPurchase, "Exceeded max token purchase");
         require(_numberOfWallets[msg.sender] + numberOfTokens <= maxTokenPerWallet, "Exceeded max token purchase per wallet");
         require(currentTokenId + numberOfTokens <= MAX_TOKENS, "Purchase would exceed max supply of tokens");
