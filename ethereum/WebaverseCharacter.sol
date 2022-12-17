@@ -1,14 +1,12 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.15;
 
-import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
-import "openzeppelin-solidity/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "openzeppelin-solidity/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "openzeppelin-solidity/contracts/access/Ownable.sol";
-import "openzeppelin-solidity/contracts/utils/math/SafeMath.sol";
+pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
+import "erc721a/contracts/ERC721A.sol";
 
-contract WebaverseCharacter is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
+contract WebaverseCharacter is ERC721A, Ownable{
+
     using SafeMath for uint256;
 
     uint256 public constant tokenPrice = 0.001 ether; // 0.0444 ETH
@@ -18,9 +16,9 @@ contract WebaverseCharacter is ERC721, ERC721Enumerable, ERC721URIStorage, Ownab
     address private _treasuryAddress; 
     
     mapping(uint256 => string) private _tokenURIs;
-    mapping(address => uint) private _numberOfWallets;
+    mapping (address => uint) private _numberOfWallets;
 
-    constructor(address treasuryAddress) ERC721("Webaverse Character", "WCC") {
+    constructor(address treasuryAddress) ERC721A("Webaverse Character", "WCC") {
       _treasuryAddress = treasuryAddress;
     }
 
@@ -60,16 +58,14 @@ contract WebaverseCharacter is ERC721, ERC721Enumerable, ERC721URIStorage, Ownab
 
     function setMaxTokensPurchase(uint _maxTokens) external onlyOwner {
         maxTokenPurchase = _maxTokens;
-        emit SetMaxTokensPurchase(_maxTokens);
     }
 
     function setMaxTokensWallet(uint _maxTokens) external onlyOwner {
         maxTokenPerWallet = _maxTokens;
-        emit SetMaxTokensWallet(_maxTokens);
     }
 
-    function setTreasuryAddress(address _treasuryAddress) external onlyOwner {
-      treasuryAddress = _treasuryAddress;
+    function setTreasuryAddress(address treasuryAddress) external onlyOwner {
+        _treasuryAddress = treasuryAddress;
     }
 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId)
