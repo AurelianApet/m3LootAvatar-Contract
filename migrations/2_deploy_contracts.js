@@ -25,7 +25,7 @@ module.exports = async function (deployer) {
 
   console.log("Deploying on the " + networkType + " networkType");
 //////////////////////////// Webaverse Character ////////////////////////////
-deployer.deploy(WebaverseCharacter, treasurer[networkType]);
+  await deployer.deploy(WebaverseCharacter, treasurer[networkType]);
 //////////////////////////////////////////////////////////////////////////
 
   console.log("*******************************")

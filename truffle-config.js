@@ -5,20 +5,18 @@ module.exports = {
   contracts_directory: "./ethereum/",
   networks: {
     mainnet: {
-      host: "", // TODO: Add me
-      provider: () => new HDWalletProvider(process.env.mainnet, ""),
-      port: 8485,
-      network_id: "1338",
-      networkCheckTimeout: 10000,
+      provider: () => new HDWalletProvider(process.env.mainnet, "https://ethereum.publicnode.com"),
+      network_id: "1",
+      networkCheckTimeout: 10000
     },
     polygon: {
       provider: () => new HDWalletProvider(process.env.polygon, `https://matic-mainnet.chainstacklabs.com`),
       network_id: 137,
-      confirmations: 2,
-      pollingInterval: 60000,
       timeoutBlocks: 10500,
+      pollingInterval: 60000,
       gasPrice: 40e9,
-      networkCheckTimeout: 100000,
+      networkCheckTimeout: 1000000,
+      confirmations: 2,
       timeout: 100000,
       skipDryRun: false
     },
