@@ -7,8 +7,6 @@ import "erc721a/contracts/ERC721A.sol";
 
 contract WebaverseCharacter is ERC721A, Ownable{
 
-    using SafeMath for uint256;
-
     uint256 public constant tokenPrice = 0.001 ether; // 0.0444 ETH
     uint public maxTokenPurchase = 20;
     uint public maxTokenPerWallet = 44;
@@ -66,21 +64,5 @@ contract WebaverseCharacter is ERC721A, Ownable{
 
     function setTreasuryAddress(address treasuryAddress) external onlyOwner {
         _treasuryAddress = treasuryAddress;
-    }
-
-    function _beforeTokenTransfer(address from, address to, uint256 tokenId)
-        internal
-        override(ERC721, ERC721Enumerable)
-    {
-        super._beforeTokenTransfer(from, to, tokenId);
-    }
-
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721, ERC721Enumerable)
-        returns (bool)
-    {
-        return super.supportsInterface(interfaceId);
     }
 }
