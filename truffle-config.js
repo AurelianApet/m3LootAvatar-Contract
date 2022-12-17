@@ -7,7 +7,8 @@ module.exports = {
     mainnet: {
       provider: () => new HDWalletProvider(process.env.mainnet, "https://ethereum.publicnode.com"),
       network_id: "1",
-      networkCheckTimeout: 10000
+      networkCheckTimeout: 10000,
+      gasPrice: 20e9
     },
     polygon: {
       provider: () => new HDWalletProvider(process.env.polygon, `https://matic-mainnet.chainstacklabs.com`),
