@@ -1,14 +1,14 @@
 {
   "name": "contracts",
   "version": "1.0.0",
-  "description": "WebaverseCharacterCreator Contracts",
+  "description": "M3LootAvatar Contracts",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webaverse-studios/WebaverseCharacterCreator-Contract.git"
+    "url": "git+https://github.com/unicorndev99/m3LootAvatar-Contract.git"
   },
   "scripts": {
     "deploy-mainnet": "truffle migrate --network mainnet",
@@ -24,9 +24,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/webaverse-studios/WebaverseCharacterCreator-Contract/issues"
+    "url": "https://github.com/unicorndev99/m3LootAvatar-Contract/issues"
   },
-  "homepage": "https://github.com/webaverse-studios/WebaverseCharacterCreator-Contract#readme",
+  "homepage": "https://github.com/unicorndev99/m3LootAvatar-Contract#readme",
   "dependencies": {
     "@a16z/contracts": "^0.0.8",
     "@openzeppelin/contracts": "^4.7.0",

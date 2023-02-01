@@ -1,6 +1,6 @@
 # contracts
 
-Webaverse contracts.
+M3LootAvatar contracts.
 
 # Setup and Installation
 
@@ -60,42 +60,6 @@ Once your environment variables are set up, you are ready to deploy.
 Your first deployment is, ideally, to a Ganache test server. If you've never used Truffle or Ganache before, you should start here:
 https://www.trufflesuite.com/docs/truffle/quickstart
 
-Once you've read up and done a practice deployment, you are ready to deploy to the Webaverse sidechain network. You can do that by running
-
-```bash
-npm run deploy-mainnetsidechain
-```
-
-If everything goes as planned, a list of addresses will be returned to you -- these are the addresses of your contracts. Write them down! In order to access NFTs from your contracts later, you will need these addresses.
-
-Once you've deployed to the Webaverse sidechain, you can additionally deploy to the polygon network and mainnet ethereum.
-
-It is suggested that you start with the polygon/matic network and make sure your infrastructure is fully working before deploying contracts to mainnet ethereum. The contracts can be deployed on Polygon/Matic for a fraction of the mainnet gas fees.
-
-# Webaverse Contracts
-Information about the Webaverse contracts is provided below, larger for the convenience of our development team.
-
-# mainnet
-Webaverse
-https://polygonscan.com/address/0x2C50E626bFF88845ec2b150f0C044995AC101e87#code
-
-WebaverseERC20
-https://polygonscan.com/address/0x5d4043C9b67627F57A36373210E03134681230fd#code
-
-WebaverseERC1155
-https://polygonscan.com/address/0x6281a08fe28a733d2A906dC851878D9786F72F21#code
-
-# OpenSea links
-
-## mainnet
-```bash
-https://opensea.io/webaverse 
-(https://opensea.io/contractaddress)
-```
-## testnet (rinkeby)
-```bash
-https://testnets.opensea.io/get-listed/step-two
-```
 # Addressess used
 
 burn: 0x000000000000000000000000000000000000dEaD

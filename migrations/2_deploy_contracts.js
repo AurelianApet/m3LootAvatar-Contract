@@ -1,4 +1,4 @@
-const WebaverseCharacter = artifacts.require("WebaverseCharacter");
+const M3LootAvatar = artifacts.require("M3LootAvatar");
 
 const NetworkTypes = {
   "mainnet": "mainnet",
@@ -25,7 +25,7 @@ module.exports = async function (deployer) {
 
   console.log("Deploying on the " + networkType + " networkType");
 //////////////////////////// Webaverse Character ////////////////////////////
-  await deployer.deploy(WebaverseCharacter, treasurer[networkType]);
+  await deployer.deploy(M3LootAvatar, treasurer[networkType]);
 //////////////////////////////////////////////////////////////////////////
 
   console.log("*******************************")
@@ -33,7 +33,7 @@ module.exports = async function (deployer) {
   console.log("Deploying on the " + networkType + " networkType");
   console.log("*******************************")
   console.log("\"" + networkType + "\": {");
-  console.log(" \"WebaverseCharacter\": " + "\"" + WebaverseCharacter.address + "\",")
+  console.log(" \"M3LootAvatar\": " + "\"" + M3LootAvatar.address + "\",")
   console.log("}");
   console.log("*******************************")
 };
